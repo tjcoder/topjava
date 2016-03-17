@@ -15,6 +15,8 @@ public class UserMeal {
 
     private final int calories;
 
+    private int userId;
+
     public UserMeal(LocalDateTime dateTime, String description, int calories) {
         this(null, dateTime, description, calories);
     }
@@ -24,6 +26,16 @@ public class UserMeal {
         this.dateTime = dateTime;
         this.description = description;
         this.calories = calories;
+    }
+
+    public void setUserId(int userId)
+    {
+        this.userId = userId;
+    }
+
+    public int getUserId()
+    {
+        return this.userId;
     }
 
     public void setId(int id) {

@@ -18,6 +18,16 @@
 <body>
 <section>
     <h2><a href="index.html">Home</a></h2>
+
+    <form method="post" action="meals?action=logged" id="setLogged">
+        <select name="id" onchange="javascript:document.getElementById('setLogged').submit()">
+            <c:forEach items="${users}" var="user">
+                <jsp:useBean id="user" scope="request" type="ru.javawebinar.topjava.model.User"/>
+                <option value="${user.id}">${user.name}</option>
+            </c:forEach>
+        </select>
+    </form>
+
     <h3>Meal list</h3>
     <a href="meals?action=create">Add Meal</a>
     <hr>
